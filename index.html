@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Huh? Understand what was just said</title>
+  <meta name="description" content="Missed a line in a video? Press Alt+H. Huh? shows what was said, in your language, with a plain explanation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,300..800&family=Anek+Devanagari:wght@400..700&family=Anek+Tamil:wght@400..700&family=Anek+Bangla:wght@400..700&family=Anek+Telugu:wght@400..700&family=Anek+Kannada:wght@400..700&family=Anek+Malayalam:wght@400..700&family=Anek+Gujarati:wght@400..700&family=Anek+Gurmukhi:wght@400..700&family=Anek+Odia:wght@400..700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="wordmark" href="#top" aria-label="Huh? home"><span>Huh?</span></a>
+    <!-- TODO: point at the Chrome Web Store listing once it's published -->
+    <a class="btn small" href="#get">Add to Chrome</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Missed what they just said?</h1>
+        <p class="press">Press <kbd>Alt</kbd><span aria-hidden="true">+</span><kbd>H</kbd></p>
+        <p class="lede">Huh? listens back to the last few seconds of any video in your browser. It shows what was said in your language and explains it in plain words. No more rewinding three times.</p>
+        <div class="actions">
+          <a class="btn" href="#get">Add to Chrome</a>
+          <span class="aside">Free. Works on YouTube and most video sites.</span>
+        </div>
+      </div>
+
+      <div class="demo" aria-label="Interactive demo">
+        <div class="player" data-state="playing">
+          <div class="scene">
+            <p class="clip-title" id="clipTitle"></p>
+            <div class="wave" aria-hidden="true"></div>
+          </div>
+          <div class="bar">
+            <button class="pp" id="pp" aria-label="Pause video"></button>
+            <div class="progress"><span id="progress"></span></div>
+            <span class="time" id="time">4:12</span>
+          </div>
+
+          <section class="card" id="card" role="dialog" aria-label="What was just said" tabindex="-1" hidden>
+            <header>
+              <span class="brand">Huh?</span>
+              <span class="langs" id="langs"></span>
+              <button class="close" id="close" aria-label="Close and resume video">×</button>
+            </header>
+            <p class="status" id="status" role="status"></p>
+            <p class="heard" id="heard"></p>
+            <p class="said"><span id="said"></span></p>
+            <p class="explain" id="explain"></p>
+            <dl class="terms" id="terms"></dl>
+          </section>
+        </div>
+
+        <div class="demo-controls">
+          <div class="samples" role="radiogroup" aria-label="Pick a sample video" id="samples"></div>
+          <button class="btn try" id="try">Try it: press <kbd>Alt</kbd>+<kbd>H</kbd></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="how" aria-labelledby="how-title">
+      <h2 id="how-title">How it works</h2>
+      <ol class="steps">
+        <li>
+          <h3>Turn it on</h3>
+          <p>Press Alt+H on a tab with a video. Huh? starts listening and keeps only the last 25 seconds.</p>
+        </li>
+        <li>
+          <h3>Miss a line</h3>
+          <p>Press Alt+H again. The video pauses where you are.</p>
+        </li>
+        <li>
+          <h3>Get it</h3>
+          <p>Read the line in your language, with a short explanation and any tricky words. Tap Listen to hear it.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="langs-section" aria-labelledby="langs-title">
+      <h2 id="langs-title">English and 22 Indian languages</h2>
+      <p class="section-lede">Huh? understands videos in any of these languages, including mixed ones like Hinglish, and explains them in the one you pick. Read aloud is available in 11 of them.</p>
+      <ul class="lang-wall" id="langWall"></ul>
+    </section>
+
+    <section class="built" aria-labelledby="built-title">
+      <h2 id="built-title">Built on Sarvam AI</h2>
+      <dl class="stack">
+        <div><dt>Hears the speech</dt><dd>Saaras v4</dd></div>
+        <div><dt>Translates it</dt><dd>Sarvam Translate and Mayura</dd></div>
+        <div><dt>Explains it</dt><dd>Sarvam-105B</dd></div>
+        <div><dt>Reads it aloud</dt><dd>Bulbul v4</dd></div>
+      </dl>
+    </section>
+
+    <section class="get" id="get" aria-labelledby="get-title">
+      <h2 id="get-title">Stop rewinding.</h2>
+      <p>Audio stays on your computer until you press the shortcut. Huh? keeps only the last 25 seconds, in memory, and sends nothing until you ask.</p>
+      <!-- TODO: Chrome Web Store link -->
+      <a class="btn" href="#">Add to Chrome</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span class="wordmark small"><span>Huh?</span></span>
+    <span>Made with Sarvam AI</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
